@@ -1,0 +1,17 @@
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\bin\Debug\net6.0\Application.dll
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\bin\Debug\net6.0\Domain.dll
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\bin\Debug\net6.0\Application.pdb
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\bin\Debug\net6.0\Domain.pdb
+D:\Users\oztur\source\repos\EnocaChallenge\Infrastructure\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
