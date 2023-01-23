@@ -76,3 +76,4 @@ D:\Users\oztur\source\repos\EnocaChallenge\Presentation\API\bin\Debug\net6.0\Dom
 D:\Users\oztur\source\repos\EnocaChallenge\Presentation\API\bin\Debug\net6.0\MediatR.dll
 D:\Users\oztur\source\repos\EnocaChallenge\Presentation\API\bin\Debug\net6.0\MediatR.Contracts.dll
 D:\Users\oztur\source\repos\EnocaChallenge\Presentation\API\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Users\oztur\source\repos\EnocaChallenge\Presentation\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs

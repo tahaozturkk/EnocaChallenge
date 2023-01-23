@@ -10,7 +10,7 @@ namespace Application.Features.Commands.Order.CreateOrder
     public class CreateOrderCommandRequest: IRequest<CreateOrderCommandResponse>
     {
         public string CustomerName { get; set; }
-        public Guid ProductId { get; set; }
-        public Guid FirmId { get; set; }
+        public string FirmName { get; set; }
+        public string ProductName { get; set; }
     }
 }

@@ -17,24 +17,26 @@ namespace Application.Features.Commands.Firm.UpdateFirm
         public UpdateFirmCommandHandler(IFirmWriteRepository firmWriteRepository, IFirmReadRepository firmReadRepository)
         {
             _firmWriteRepository = firmWriteRepository;
-            _firmReadRepository = firmReadRepository;   
+            _firmReadRepository = firmReadRepository;
         }
         public async Task<UpdateFirmCommandResponse> Handle(UpdateFirmCommandRequest request, CancellationToken cancellationToken)
         {
-            Domain.Entities.Firm firm = await _firmReadRepository.GetByIdAsync(request.Id);
-            firm.FirmState = request.FirmState;
-            firm.OrderStartTime = request.OrderStartTime;
-            firm.OrderEndTime = request.OrderEndTime;
-            try
+            Domain.Entities.Firm firm = await _firmReadRepository.GetSingleAsync(x => x.Name == request.FirmName);
+            if (firm != null)
             {
+                firm.FirmState = request.FirmState;
+                firm.OrderStartTime = request.OrderStartTime;
+                firm.OrderEndTime = request.OrderEndTime;
+                _firmWriteRepository.Update(firm);
                 await _firmWriteRepository.SaveAsync();
             }
-            catch
-            {
-                throw new UpdateFirmErrorException();
-            }
+            else
+                throw new Exception("Böyle bir firma bulunamamıştır!");
 
-            return new();
+            return new()
+            {
+                Message = "Firma bilgileri başarıyla güncellenmiştir."
+            };
         }
     }
 }

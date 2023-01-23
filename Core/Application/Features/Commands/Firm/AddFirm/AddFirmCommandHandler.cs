@@ -13,29 +13,37 @@ namespace Application.Features.Commands.Firm.AddFirm
     public class AddFirmCommandHandler : IRequestHandler<AddFirmCommandRequest, AddFirmCommandResponse>
     {
         readonly IFirmWriteRepository _firmWriteRepository;
-        public AddFirmCommandHandler(IFirmWriteRepository firmWriteRepository)
+        readonly IFirmReadRepository _firmReadRepository;
+        public AddFirmCommandHandler(IFirmWriteRepository firmWriteRepository, IFirmReadRepository firmReadRepository)
         {
             _firmWriteRepository = firmWriteRepository;
+            _firmReadRepository = firmReadRepository;
         }
         public async Task<AddFirmCommandResponse> Handle(AddFirmCommandRequest request, CancellationToken cancellationToken)
         {
-            Domain.Entities.Firm firm = new()
-            {
-                Id = Guid.NewGuid(),
-                Name = request.Name,
-                FirmState = request.FirmState,
-                OrderEndTime = request.OrderEndTime,
-                OrderStartTime = request.OrderStartTime,
-            };
-            try{
-                await _firmWriteRepository.AddAsync(firm);
-                await _firmWriteRepository.SaveAsync();
-            }catch
-            {
-                throw new AddFirmErrorException();
-            }
+            Domain.Entities.Firm firmControl =  await _firmReadRepository.GetSingleAsync(x => x.Name == request.Name);
 
-            return new();
+            if (firmControl == null)
+            {
+                await _firmWriteRepository.AddAsync(new()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = request.Name,
+                    FirmState = request.FirmState,
+                    OrderEndTime = request.OrderEndTime,
+                    OrderStartTime = request.OrderStartTime,
+                });
+                await _firmWriteRepository.SaveAsync();
+            }
+            else
+            {
+                throw new Exception("Firma daha önce eklenmiş!.");
+            }  
+
+            return new()
+            {
+                Message = "Firma başarıyla eklenmiştir."
+            };
         }
     }
 }

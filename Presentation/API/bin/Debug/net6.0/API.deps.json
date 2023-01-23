@@ -594,7 +594,6 @@
       "Persistence/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
-          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.13",
           "Microsoft.Extensions.Configuration": "6.0.1",

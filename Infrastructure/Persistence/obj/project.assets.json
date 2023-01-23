@@ -2496,7 +2496,6 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Application >= 1.0.0",
-      "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.13",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.13",
@@ -2533,9 +2532,6 @@
           "projectReferences": {
             "D:\\Users\\oztur\\source\\repos\\EnocaChallenge\\Core\\Application\\Application.csproj": {
               "projectPath": "D:\\Users\\oztur\\source\\repos\\EnocaChallenge\\Core\\Application\\Application.csproj"
-            },
-            "D:\\Users\\oztur\\source\\repos\\EnocaChallenge\\Core\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\Users\\oztur\\source\\repos\\EnocaChallenge\\Core\\Domain\\Domain.csproj"
             }
           }
         }

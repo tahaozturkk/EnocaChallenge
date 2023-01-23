@@ -8,6 +8,6 @@ namespace Application.Features.Commands.Firm.AddFirm
 {
     public class AddFirmCommandResponse
     {
-
+        public string? Message { get; set; }
     }
 }

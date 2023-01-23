@@ -8,5 +8,6 @@ namespace Application.Features.Commands.Firm.UpdateFirm
 {
     public class UpdateFirmCommandResponse
     {
+        public string Message { get; set; }
     }
 }

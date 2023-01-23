@@ -13,26 +13,36 @@ namespace Application.Features.Commands.Product.AddProduct
     public class AddProductCommandHandler : IRequestHandler<AddProductCommandRequest, AddProductCommandResponse>
     {
         readonly IProductWriteRepository _productWriteRepository;
-        public AddProductCommandHandler(IProductWriteRepository productWriteRepository)
+        readonly IFirmReadRepository _firmReadRepository;
+        public AddProductCommandHandler(IProductWriteRepository productWriteRepository, IFirmReadRepository firmReadRepository)
         {
             _productWriteRepository = productWriteRepository;
+            _firmReadRepository = firmReadRepository;
         }
         public async Task<AddProductCommandResponse> Handle(AddProductCommandRequest request, CancellationToken cancellationToken)
         {
-
-            Domain.Entities.Product product = new()
+            Domain.Entities.Firm firm = await _firmReadRepository.GetSingleAsync(x => x.Name == request.FirmName);
+            if (firm != null)
             {
-                Id = Guid.NewGuid(),
-                Name = request.Name,
-                Price = request.Price,
-                Stock = request.Stock,
-                FirmId = request.FirmId
+                Domain.Entities.Product product = new()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = request.Name,
+                    Price = request.Price,
+                    Stock = request.Stock,
+                    FirmId = firm.Id,
+                };
+
+                await _productWriteRepository.AddAsync(product);
+                await _productWriteRepository.SaveAsync();
+            }
+            else
+                throw new Exception($"Ürün ekleme işlemi başarısız! {request.FirmName} isimli firma bulunamadı.");
+
+            return new()
+            {
+                Message = $"Ürünler {firm.Name} firmasına başarıyla eklenmiştir."
             };
-
-            await _productWriteRepository.AddAsync(product);
-            await _productWriteRepository.SaveAsync();
-
-            return new();
         }
     }
 }

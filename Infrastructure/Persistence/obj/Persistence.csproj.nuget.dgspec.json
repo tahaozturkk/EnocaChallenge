@@ -158,9 +158,6 @@
             "projectReferences": {
               "D:\\Users\\oztur\\source\\repos\\EnocaChallenge\\Core\\Application\\Application.csproj": {
                 "projectPath": "D:\\Users\\oztur\\source\\repos\\EnocaChallenge\\Core\\Application\\Application.csproj"
-              },
-              "D:\\Users\\oztur\\source\\repos\\EnocaChallenge\\Core\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Users\\oztur\\source\\repos\\EnocaChallenge\\Core\\Domain\\Domain.csproj"
               }
             }
           }

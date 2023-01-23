@@ -8,5 +8,6 @@ namespace Application.Features.Commands.Product.AddProduct
 {
     public class AddProductCommandResponse
     {
+        public string? Message { get; set; }
     }
 }
