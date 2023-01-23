@@ -16,7 +16,7 @@ namespace Persistence.Services
             _firmReadRepository = firmReadRepository;
             _productReadRepository = productReadRepository;
         }
-        public async Task CreateOrder(string customerName, string firmName, string productName)
+        public async Task CreateOrderAsync(string customerName, string firmName, string productName)
         {
             Domain.Entities.Product product = await _productReadRepository.GetSingleAsync(x => x.Name == productName);
             Domain.Entities.Firm firm = await _firmReadRepository.GetSingleAsync(x => x.Name == firmName);

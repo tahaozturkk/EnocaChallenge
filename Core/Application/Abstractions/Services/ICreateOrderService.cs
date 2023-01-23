@@ -8,6 +8,6 @@ namespace Application.Abstractions.Services
 {
     public interface ICreateOrderService
     {
-        Task CreateOrder(string customerName, string firmName, string productName); 
+        Task CreateOrderAsync(string customerName, string firmName, string productName); 
     }
 }

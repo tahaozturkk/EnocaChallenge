@@ -7,8 +7,7 @@ using Persistence.Context;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("MSSQL");
-builder.Services.AddDbContext<EnocaChallengeDbContext>(options => options.UseSqlServer(connectionString));
+
 
 builder.Services.AddPersistenceServices();
 builder.Services.AddApplicationServices();

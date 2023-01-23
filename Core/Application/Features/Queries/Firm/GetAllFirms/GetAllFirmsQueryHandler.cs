@@ -26,6 +26,7 @@ namespace Application.Features.Queries.Firm.GetAllFirms
                 firm.OrderStartTime, 
                 firm.OrderEndTime,
             }).ToList();
+
             return new()
             {
                 Firms = firms,

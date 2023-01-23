@@ -13,7 +13,7 @@ namespace Application.Features.Commands.Order.CreateOrder
 {
     public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommandRequest, CreateOrderCommandResponse>
     {
-        ICreateOrderService _createOrderService;
+        readonly ICreateOrderService _createOrderService;
 
         public CreateOrderCommandHandler(ICreateOrderService createOrderService)
         {
@@ -22,7 +22,7 @@ namespace Application.Features.Commands.Order.CreateOrder
 
         public async Task<CreateOrderCommandResponse> Handle(CreateOrderCommandRequest request, CancellationToken cancellationToken)
         {
-            await _createOrderService.CreateOrder(request.CustomerName, request.FirmName, request.ProductName);
+            await _createOrderService.CreateOrderAsync(request.CustomerName, request.FirmName, request.ProductName);
             return new()
             {
                 Message = "Sipariş başarıyla oluşturulmuştur."
